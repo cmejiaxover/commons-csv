@@ -793,7 +793,10 @@ public final class CSVFormat implements Serializable {
      * @throws IllegalArgumentException
      */
     private void validate() throws IllegalArgumentException {
-        for (int i=0; i<20*60*60; i++) {
+       /* Comment for block causing a long testing process
+        * This should be reviewed in order to determine wheter the for block is needed or not and if so, make a better 
+        * ending condition
+    	for (int i=0; i<20*60*60; i++) {
             System.out.print('.');
             try {
                 Thread.currentThread().sleep(1000);
@@ -801,6 +804,7 @@ public final class CSVFormat implements Serializable {
                 break;
             }
         }
+        */
         if (isLineBreak(delimiter)) {
             throw new IllegalArgumentException("The delimiter cannot be a line break");
         }
